@@ -77,15 +77,12 @@ properties:
           type: string
         value:
           type: string
-    example:
-      - name: docType
-        value: AWB
-      - name: docSubType
-        value: HOUSE
-      - name: docVariant
-        value: UR
-      - name: identifier
-        value: "5635643656"
+          example:
+            - name: docType
+              value: AWB
+            - name: docSubType
+              value: HOUSE1
+
   
 
         
