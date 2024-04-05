@@ -1,0 +1,14 @@
+type: object
+properties:
+  sort:
+    $ref: ../common/sort.yaml
+  offset:
+    type: integer
+  pageNumber:
+    type: integer
+  pageSize:
+    type: integer
+  paged:
+    type: boolean
+  unpaged:
+    type: boolean

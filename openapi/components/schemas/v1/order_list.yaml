@@ -1,0 +1,26 @@
+type: object
+properties: 
+  content:
+    type: array
+    items:
+      $ref: order.yaml
+  pageable:
+    $ref: '../common/pageable.yaml'
+  totalPages:
+    type: integer
+  totalElements:
+    type: integer
+  last:
+    type: boolean
+  size:
+    type: integer
+  number:
+    type: integer
+  sort:
+    $ref: ../common/sort.yaml
+  numberOfElements:
+    type: integer
+  first:
+    type: boolean
+  empty:
+    type: boolean

@@ -1,0 +1,10 @@
+type: object
+properties: 
+  optional:
+    type: boolean
+    description: true if document is optional, false is the document is mandatory
+    example: true
+  sortOrder:
+    type: string
+    description: order of documment e.g. in a packed pdf
+    example: 2
