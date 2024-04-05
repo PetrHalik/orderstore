@@ -82,6 +82,9 @@ properties:
               value: AWB
             - name: docSubType
               value: HOUSE1
+  test: 
+    type: string
+    description: Test property
 
   
 
