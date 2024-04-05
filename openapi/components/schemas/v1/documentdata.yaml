@@ -1,0 +1,98 @@
+type: object
+properties: 
+  id: 
+    type: string
+    format: uuid
+    description: The unique identifier of the documentdata
+  businessKey: 
+    type: string
+    description: e-invoicing order identifier
+  documentStoreId:
+    type: string
+    format: uuid
+    description: The unique identifier of the document in a document store
+  title:
+    type: string
+    description: title of a document 
+  retrieveStatus:
+    type: string
+    description: The status of retrieving of a document. Possible values DONE/ERROR/RETRIEVING/WAITING
+  processType:
+    type: string
+    description: | 
+         Process type of a document. It defines i this document should be retrieved. Possible values
+         * RETRIEVE - document will be retrieved
+         * WAIT     - will be retrieved later
+         * NONE     - document will be not retrieved e.g. local generated document
+  uri: 
+    type: string
+    description: URI for download of the document
+    example: http://documents.com/5t4w4gwewegwete
+  billingType:
+    type: string
+    description: A code for billing purpose
+    example: ASP-SCD-CACHEFIBU
+  type: 
+    type: string
+    description: |
+      Purpose of the document.
+      * ARCHIVE
+      * OUTPUT
+      * INPUT_SOURCE
+  category:
+    type: string
+    description: | 
+      * ATTACHMENT  - Document is an attachment
+      * INVOICE     - Invoice document
+      * SOURCE_FILE - Input document for processing  
+      * INTERNAL    - a document for internal workflow usage
+  mimetype:
+    type: string
+    description: Mimetype of the document. E.g. xmj, jpg, json
+  format:
+    type: string
+    description: A format of the document e.g. X-INVOICE/EDI/INVOICE_OBJECT/ATTACHMENT
+  formatTemplate:
+    type: string
+    description:  format specification
+    example: csv_schenker
+  fileName:
+    type: string   
+    description: file name
+    example: invoice_object_234566666_2023_12_01.json
+  fileSize:
+    type: integer
+    description: file size
+  storageInstructions:
+    $ref: storageInstructions.yaml   
+  archive:
+    type: string
+    description: Archive code. e.g. ODM, LOCAL, WIDAS
+  archiveMapping:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    example:
+      - name: docType
+        value: AWB
+      - name: docSubType
+        value: HOUSE
+      - name: docVariant
+        value: UR
+      - name: identifier
+        value: "5635643656"
+  
+
+        
+    
+    
+    
+    
+    
+    
+    

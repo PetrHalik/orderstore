@@ -1,0 +1,15 @@
+get: 
+  tags: 
+    -  DocumentData
+  summary: Get a list of document data for an order
+  description: Get a list of document data for an order.
+  operationId: listDocumentData
+  responses: 
+    '200': 
+      description: Success
+      content: 
+        application/json: 
+          schema: 
+            $ref: ../../components/schemas/v1/documentdata_list.yaml  
+    '404': 
+      $ref: ../../components/responses/not_found_404.yaml
