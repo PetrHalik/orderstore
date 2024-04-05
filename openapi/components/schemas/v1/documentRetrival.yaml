@@ -1,0 +1,16 @@
+type: object
+properties: 
+  numberOfAttemps:
+    type: integer
+    description: number of attempts to retrieve the document.
+    example: 12
+  lastUpdate:
+    $ref: ../common/iso_timestamp.yaml 
+  maxWaitTime:
+    type: integer
+    description: Maximum document wait time in seconds.
+    example: 6000
+  errorMessage:
+    type: string
+    description: Description on error by retrieving od the document.
+    example: Unable to connect to the archive

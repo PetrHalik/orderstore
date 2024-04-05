@@ -1,0 +1,44 @@
+type: object
+properties:
+  code:
+    type: string
+    description: code of the step 
+    example: PDF_1B_SCHENKER
+  description:  
+    description: Description of the step
+    example: Generate PDF_1B output for Schenker   
+  tenant:
+    type: integer
+    description: Tenant id
+    example: 1
+  order:
+    type: integer
+    description: Step order
+    example: 1
+  type:
+    type: string
+    description: Step type. Possible values - TRANSFORMER/GENERATOR/TRANSMITTOR
+    example: TRANSFORMER
+  processorId:
+    type: integer
+    description:  Id of processor which is used 
+  actions:
+    type: array
+    items:
+      type: object
+      properties:
+        actionCode:
+          type: string
+          description: Code of action definition
+          example: generate_csv
+        condition:
+          type: string
+        directives:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
