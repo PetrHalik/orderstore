@@ -1,0 +1,24 @@
+type: object
+properties: 
+  storeType:
+    type: string
+    description: | 
+      direction how to store documents 
+      * LOCAL - document is stored only locally
+      * CACHED - document is stored in an external archive and a duplicate is stored locally
+      * EXTERNAL - document is stored in an external archive and is not cached locally. It is always retrieve from an external source
+    example: CACHED
+  storageDuration:
+    type: string
+    description: how long is document stored locally e.g. 30D, PERMANENT
+    example: 3D
+  deleteWhenDone:
+    type: string
+    description: |
+      delete document from the  when the order is finished
+      * CACHED   - delete the document from cache
+      * NONE     - do not delete the document
+      * ANYWHERE - delete the document from cache and an external archive
+    example: CACHED
+    
+  

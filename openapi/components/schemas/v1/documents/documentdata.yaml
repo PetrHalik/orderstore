@@ -1,0 +1,103 @@
+type: object
+properties: 
+  id: 
+    $ref: ../../common/uuid_id.yaml
+  businessKey: 
+    type: string
+    description: e-invoicing internal identifier
+    example: 2022-07-20-16-25-02-485f0fd9-28a2-440b-9f73-a78a186d38bf
+  tenant:
+      type: integer
+      description: Tenant id
+      example: 1  
+  fileStorageId:
+    description: Id to document content in a file strorage
+    $ref: ../../common/uuid_id.yaml
+  title:
+    type: string
+    description: title of a document
+    example: Stückgut Anhänge
+  uri: 
+      type: string
+      description: URI for download of the document
+      example: http://documents.com/5t4w4gwewegwete    
+  status:
+    type: string
+    description: | 
+     Status of stored document. 
+     * CACHED       - document is available and cached
+     * EXTERNAL     - document is registered, is external and is not in cache
+     * ERROR        - document can't be retrieved or read from an external archive
+     * REGISTERED   - docement is registered but not retrieved yet
+    example: CACHED
+  purpose:
+    type: string
+    description: | 
+         Purpose of the document
+         * WRAP - document will be retrieved
+         * OUTPUT     - will be retrieved later
+         * INPUT     - document will be not retrieved e.g. local generated document
+    example: OUTPUT
+  category:
+    type: string
+    description: | 
+      * ATTACHMENT  - Document is an attachment
+      * INVOICE     - Invoice document
+      * SOURCE_FILE - Input document for processing  
+      * INTERNAL    - a document for internal workflow usage
+    example: ATTACHMENT  
+  billingType:
+    type: string
+    description: A code for billing purpose
+    example: ASP-SCD-CACHEFIBU
+  format:
+      type: string
+      description: A format of the document e.g. X-INVOICE/EDI/INVOICE_OBJECT/ATTACHMENT
+      format: CSV
+  formatTemplate:
+      type: string
+      description:  format specification
+      example: csv_schenker   
+  storageDirections:
+    $ref: storageDirections.yaml      
+  fileInfo:
+      $ref: fileInfo.yaml     
+  archive:
+    type: string
+    description: Archive code. e.g. ODM, LOCAL, WIDAS
+    example: ODM
+  externalArchiveMapping:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    example:
+      - name: docType
+        value: AWB
+      - name: docSubType
+        value: HOUSE1
+  dateCreated:
+    $ref: ../../common/iso_timestamp.yaml
+  dateUpdated:
+    $ref: ../../common/iso_timestamp.yaml   
+  retrieval:  
+    $ref: documentRetrival.yaml
+  attachmentDirectives:
+    $ref: attachmentDirections.yaml
+      
+
+
+  
+
+        
+    
+    
+    
+    
+    
+    
+    

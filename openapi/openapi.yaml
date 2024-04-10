@@ -19,10 +19,10 @@ externalDocs:
   description: "Find out how to create a GitHub repo for your OpenAPI definition."
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
-  - name: Order
-    description: "Order operations"
-  - name: DocumentData
-    description: "Document Metadata operations"    
+  - name: WorkOrders
+    description: "WorkOrder store operations"
+  - name: Documents
+    description: "Document store operations"    
 servers:
   - url: https://{tenant}/api/v1
     variables:
@@ -31,10 +31,8 @@ servers:
         description: Your tenant id
   - url: https://example.com/api/v1
 paths:
-  /v1/documentsdata:
-    $ref: paths/v1/documentdata.yaml
-  /v1/order:
-    $ref: paths/v1/order.yaml  
+  /v1/documents/{documentId}:
+    $ref: paths/v1/documents/document_{documentId}.yaml
 security: 
   -  basic_auth: []  
 components:
@@ -56,21 +54,4 @@ components:
     basic_auth:
       type: http
       scheme: basic
-webhooks:
-  userInfo:
-    post:
-      summary: New user webhook
-      description: "Information about a new user in the system."
-      operationId: userInfo
-      tags:
-        - Info
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: 'components/schemas/User.yaml'
-      responses:
-        '200':
-          description: "Successfully retrieved information about a new user."
-      security:
-        - api_key: []
+

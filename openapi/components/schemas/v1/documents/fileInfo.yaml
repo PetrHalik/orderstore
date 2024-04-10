@@ -1,0 +1,21 @@
+type: object
+properties: 
+  storageType: 
+    type: string
+    description: |
+      It defines how a document is stored
+      * LOCAL    - document is stored locally
+      * CACHED   - document is stored in an external archive and a copy is cached locally
+      * EXTERNAL - document is stored only in an external archive
+    example: CACHE  
+  extension:
+    type: string
+    description: File extension. E.g. xmj, jpg, json, tiff
+    example: csv  
+  mimetype:
+    type: string
+    description: Mimetype of the document. E.g. xmj, jpg, json
+    example: csv
+
+
+  

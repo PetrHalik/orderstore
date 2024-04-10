@@ -5,7 +5,7 @@ properties:
     description: number of attempts to retrieve the document.
     example: 12
   lastUpdate:
-    $ref: ../common/iso_timestamp.yaml 
+    $ref: ../../common/iso_timestamp.yaml 
   maxWaitTime:
     type: integer
     description: Maximum document wait time in seconds.
