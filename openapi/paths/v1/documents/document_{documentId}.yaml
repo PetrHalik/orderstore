@@ -1,11 +1,36 @@
 get: 
   tags: 
-    -  Docments  
+    -  Documents  
   summary: Get Document metadata by id
   description: Get Document metadata by id
   operationId: getDocumentMetadataById
   parameters: 
     - $ref: ../../../components/parameters/document_id.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/schemas/v1/documents/documentdata.yaml
+    '400':
+      $ref: ../../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../../components/responses/not_found_404.yaml
+put:      
+  tags: 
+    -  Documents
+  summary: Update a document metadata
+  description:  |
+    Update a document by ID
+  operationId: updateDocumentById
+  parameters: 
+    - $ref: ../../../components/parameters/document_id.yaml
+  requestBody:
+    content: 
+      application/json: 
+        schema: 
+          $ref: ..\..\..\components\schemas\v1\documents\documentdata_update.yaml
   responses:
     '200':
       description: successful operation

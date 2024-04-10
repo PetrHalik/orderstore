@@ -1,0 +1,47 @@
+
+get:
+  tags: 
+    -  Documents
+  summary: Get documents metadata list by businessKey
+  operationId: getDocumentsByKey
+  parameters:
+    - name: businessKey
+      in: query
+      description: BusinesKey to which the document belongs
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../../components/schemas/v1/documents/documentdata_list.yaml
+    '400':
+      $ref: ../../../components/responses/bad_request_400.yaml
+post: 
+  tags: 
+    -  Documents
+  summary: Create a new document
+  description: | 
+      Create a new Document. If the content field is empty, only DocumentMetatata is created, 
+      otherwise the metadata is created and the content is stored in FileStorage.
+  operationId: createDocument     
+  requestBody: 
+    required: true
+    content:
+      application/json:
+        schema: 
+          $ref: ..\..\..\components\schemas\v1\documents\document_create.yaml
+  responses: 
+    '201': 
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/schemas/v1/documents/documentdata.yaml
+    '400': 
+      $ref: ../../../components/responses/bad_request_400.yaml

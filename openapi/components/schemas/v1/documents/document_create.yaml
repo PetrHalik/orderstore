@@ -1,7 +1,5 @@
 type: object
-properties: 
-  id: 
-    $ref: ../../common/uuid_id.yaml
+properties:
   businessKey: 
     type: string
     description: e-invoicing internal identifier
@@ -10,9 +8,9 @@ properties:
       type: integer
       description: Tenant id
       example: 1  
-  fileStorageId:
-    description: Id to document content in a file strorage
-    $ref: ../../common/uuid_id.yaml
+  fileContent: 
+    type: string
+    format: byte
   title:
     type: string
     description: title of a document
@@ -21,22 +19,13 @@ properties:
       type: string
       description: URI for download of the document
       example: http://documents.com/5t4w4gwewegwete    
-  status:
-    type: string
-    description: | 
-     Status of stored document. 
-     * CACHED       - document is available and cached
-     * EXTERNAL     - document is registered, is external and is not in cache
-     * ERROR        - document can't be retrieved or read from an external archive
-     * REGISTERED   - docement is registered but not retrieved yet
-    example: CACHED
   purpose:
     type: string
     description: | 
-         Purpose of the document
-         * WRAP - document will be retrieved
-         * OUTPUT     - will be retrieved later
-         * INPUT     - document will be not retrieved e.g. local generated document
+          Purpose of the document
+          * WRAP - document will be retrieved
+          * OUTPUT     - will be retrieved later
+          * INPUT     - document will be not retrieved e.g. local generated document
     example: OUTPUT
   category:
     type: string
@@ -80,12 +69,31 @@ properties:
         value: AWB
       - name: docSubType
         value: HOUSE1
-  dateCreated:
-    $ref: ../../common/iso_timestamp.yaml
-  dateUpdated:
-    $ref: ../../common/iso_timestamp.yaml   
-  retrieval:  
-    $ref: documentRetrival.yaml
   attachmentDirectives:
     $ref: attachmentDirections.yaml
+        
+  
+  
+    
+  
+          
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+  
+
+        
+    
+    
+    
+    
+    
+    
     

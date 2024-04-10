@@ -1,18 +1,5 @@
 type: object
 properties: 
-  id: 
-    $ref: ../../common/uuid_id.yaml
-  businessKey: 
-    type: string
-    description: e-invoicing internal identifier
-    example: 2022-07-20-16-25-02-485f0fd9-28a2-440b-9f73-a78a186d38bf
-  tenant:
-      type: integer
-      description: Tenant id
-      example: 1  
-  fileStorageId:
-    description: Id to document content in a file strorage
-    $ref: ../../common/uuid_id.yaml
   title:
     type: string
     description: title of a document
@@ -57,35 +44,19 @@ properties:
   formatTemplate:
       type: string
       description:  format specification
-      example: csv_schenker   
-  storageDirections:
-    $ref: storageDirections.yaml      
-  fileInfo:
-      $ref: fileInfo.yaml     
-  archive:
-    type: string
-    description: Archive code. e.g. ODM, LOCAL, WIDAS
-    example: ODM
-  externalArchiveMapping:
-    type: array
-    items:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-    example:
-      - name: docType
-        value: AWB
-      - name: docSubType
-        value: HOUSE1
-  dateCreated:
-    $ref: ../../common/iso_timestamp.yaml
-  dateUpdated:
-    $ref: ../../common/iso_timestamp.yaml   
-  retrieval:  
-    $ref: documentRetrival.yaml
+      example: csv_schenker        
   attachmentDirectives:
     $ref: attachmentDirections.yaml
+      
+
+
+  
+
+        
+    
+    
+    
+    
+    
+    
     

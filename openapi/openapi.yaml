@@ -31,8 +31,12 @@ servers:
         description: Your tenant id
   - url: https://example.com/api/v1
 paths:
-  /v1/documents/{documentId}:
+  /api/v1/documents/{documentId}:
     $ref: paths/v1/documents/document_{documentId}.yaml
+  /api/v1/documents/{documentId}/content:
+      $ref: paths/v1/documents/document_content.yaml  
+  /v1/documents:
+    $ref: paths/v1/documents/document_list.yaml  
 security: 
   -  basic_auth: []  
 components:
