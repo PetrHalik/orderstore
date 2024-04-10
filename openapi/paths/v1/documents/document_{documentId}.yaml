@@ -30,7 +30,7 @@ put:
     content: 
       application/json: 
         schema: 
-          $ref: ..\..\..\components\schemas\v1\documents\documentdata_update.yaml
+          $ref: ../../../components/schemas/v1/documents/documentdata_update.yaml
   responses:
     '200':
       description: successful operation
