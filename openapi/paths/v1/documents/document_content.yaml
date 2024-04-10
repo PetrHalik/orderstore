@@ -9,7 +9,7 @@ get:
     - $ref: ../../../components/parameters/document_id.yaml
   responses:
     '200':
-      description: Úspěšně vrácen obsah souboru
+      description: successful operation
       content:
         application/octet-stream:
           schema:
@@ -38,10 +38,6 @@ put:
   responses:
     '200':
       description: successful operation
-      content:
-        application/json:
-          schema:
-            $ref: ../../../components/schemas/v1/documents/documentdata.yaml
     '400':
       $ref: ../../../components/responses/bad_request_400.yaml
     '404':
@@ -63,12 +59,8 @@ post:
           type: string
           format: byte
   responses:
-    '200':
+    '201':
       description: successful operation
-      content:
-        application/json:
-          schema:
-            $ref: ../../../components/schemas/v1/documents/documentdata.yaml
     '400':
       $ref: ../../../components/responses/bad_request_400.yaml
     '404':
